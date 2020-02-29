@@ -1,0 +1,12 @@
+@import 'src/styles/_colors';
+
+footer {
+    display: block;
+    color: rgba(255, 255, 255, .4);
+    font-weight: 300;
+    padding-top: 3vh;
+    padding-bottom: 3vh;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: $primary-color;
+    text-align: center;
+}
