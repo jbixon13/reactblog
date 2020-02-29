@@ -8,8 +8,9 @@ class Navbar extends Component {
         return(
             <div className='Navbar'>
                 <header>
-                    <a href='/'></a>
+                    <a href='/'>
                         <img src={logo} alt='homepage logo'></img>
+                    </a>
                     <div className='links'>
                         <a href='/'>Home</a>
                         <a href='/about'>About</a>

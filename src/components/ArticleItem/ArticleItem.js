@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
 
+require('./ArticleItem.scss');
+
 export class ArticleItem extends Component {
     render() {
         return (
-            <div>
-                <h1>{ this.props.article.title }</h1>
-                <h3>{ this.props.article.subtitle }</h3>
+            <div className='ArticleItem'>
+                <h2>{ this.props.article.title }</h2>
+                <p>{ this.props.article.subtitle }</p>
                 <p>{ this.props.article.date }</p>
             </div>
         )
