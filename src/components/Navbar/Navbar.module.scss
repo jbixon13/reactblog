@@ -18,24 +18,23 @@ header {
         margin-top: 20px;
         margin-left: 24px;
     }
+ 
+    .links {
+        float: right;
+        font-weight: 300;
+        margin-right: 24px;
+    }
     
-}
-
-.links {
-    float: right;
-    font-weight: 300;
-    margin-top: 20px;
-    margin-right: 24px;
-}
-
-.links a {
-    font-size: 12px;
-    margin-left: 24px;
-    text-transform: uppercase;
-    color: $white-text;
-    text-decoration: none;
-}
-
-.links a:hover {
-    color: $white-text-hover;
+    .links li {
+        font-size: 12px;
+        margin-left: 24px;
+        text-transform: uppercase;
+        color: $white-text;
+        text-decoration: none;
+        display: inline-block;
+    }
+    
+    .links li:hover {
+        color: $white-text-hover;
+    }    
 }

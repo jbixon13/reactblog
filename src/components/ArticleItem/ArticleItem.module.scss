@@ -14,7 +14,8 @@
     }
 
     a {
-        color: $link-color
+        color: $link-color;
+        text-decoration: none;
     }
 
     p {
@@ -24,4 +25,8 @@
     img {
         width: 100%;
     }
+}
+
+.ArticleItem:last-of-type {
+    border-bottom: none;
 }
