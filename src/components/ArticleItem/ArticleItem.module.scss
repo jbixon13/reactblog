@@ -1,0 +1,27 @@
+@import 'src/styles/_colors';
+
+.ArticleItem {
+    width: auto;
+    display: block;
+    border-bottom: 1px solid $line-color;
+    box-sizing: border-box;
+    padding: 24px 0;
+
+    h2 {
+        font-size: 20px;
+        font-weight: 700;    
+        color: $link-color;    
+    }
+
+    a {
+        color: $link-color
+    }
+
+    p {
+        color: $link-color;
+    }
+
+    img {
+        width: 100%;
+    }
+}

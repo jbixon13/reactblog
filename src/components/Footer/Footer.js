@@ -1,11 +1,10 @@
 import React, { Component } from 'react'
-
-require('./Footer.scss');
+import styles from './Footer.module.scss'
 
 class Footer extends Component {
     render() {
         return(
-            <div className='Footer'>
+            <div className={styles.Footer}>
                 <footer>
                     <p>Made in Baltimore</p>
                     <p>Design modeled after Distill.pub</p>
