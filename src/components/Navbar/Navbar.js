@@ -8,9 +8,9 @@ class Navbar extends Component {
         return(
             <div className={styles.Navbar}>
                 <header>
-                    <a href='/'>
+                    <Link to='/'>
                         <img src={logo} alt='homepage logo'></img>
-                    </a>
+                    </Link>
                     <div className={styles.links}>
                         <ul>
                             <Link to='/'>
