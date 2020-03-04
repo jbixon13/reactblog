@@ -5,7 +5,7 @@ export class ArticleHeader extends Component {
     render() {
         return (
             <div className={styles.ArticleHeader}>
-                <h1>Hello</h1>
+                {this.props.children}
             </div>
         )
     }
