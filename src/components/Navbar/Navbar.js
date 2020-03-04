@@ -19,7 +19,7 @@ class Navbar extends Component {
                             <Link to='/about'>
                                 <li>About</li>
                             </Link>
-                            <a href='https://jasonbixon.netlify.com/portfolio/'>
+                            <a href='https://jasonbixon.netlify.com/portfolio/' target='_blank' rel='noopener noreferrer'>
                                 <li>Portfolio</li>
                             </a>
                             <Link to='/contact'>
