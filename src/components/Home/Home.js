@@ -8,6 +8,14 @@ class Home extends Component {
         articles: [
           {
             id: 1,
+            title: '3D Terrain in Deck.gl',
+            subtitle: 'Is the subway system as dire as we say it is?',
+            date: '3/03/2020',
+            preview: '/previews/mta-doom-gloom.gif',
+            link: '/articles/deck-terrain'
+          },          
+          {
+            id: 2,
             title: 'MTA Doom and Gloom',
             subtitle: 'Is the subway system as dire as we say it is?',
             date: '4/14/2019',
@@ -15,7 +23,7 @@ class Home extends Component {
             link: '/articles/MTA-doom-gloom'
           },
           {
-            id: 2,
+            id: 3,
             title: 'Shiny is Cool as Hell',
             subtitle: 'A surprisingly intuitive tool for data democratization.',
             date: '4/2/2019',
@@ -24,7 +32,7 @@ class Home extends Component {
     
           },
           {
-            id: 3,
+            id: 4,
             title: 'New Year, New (First) Blog',
             subtitle: 'Trying my best.',
             date: '1/24/2019',
