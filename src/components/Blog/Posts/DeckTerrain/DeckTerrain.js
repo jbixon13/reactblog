@@ -6,7 +6,7 @@ import ArticleContainer from '../../ArticleContainer';
 export class DeckTerrain extends Component {
     render() {
         return (
-            <div className={styles.MTADoom}>
+            <div className={styles.DeckTerrain}>
                 <ArticleContainer>
                     <ArticleHeader>
                         <h1>3D Terrain in Deck.gl</h1>
@@ -14,7 +14,7 @@ export class DeckTerrain extends Component {
                         <p>Date here</p>
                     </ArticleHeader>   
                 <p>hello from inside the container</p>
-                </ArticleContainer>            
+                </ArticleContainer>  
             </div>
         )
     }

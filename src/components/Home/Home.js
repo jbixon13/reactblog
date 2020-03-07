@@ -9,10 +9,11 @@ class Home extends Component {
           {
             id: 1,
             title: '3D Terrain in Deck.gl',
-            subtitle: 'Is the subway system as dire as we say it is?',
+            subtitle: 'Experimental 3D tiles are fun.',
             date: '3/03/2020',
             preview: '/previews/mta-doom-gloom.gif',
-            link: '/articles/deck-terrain'
+            link: '/articles/deck-terrain',
+            tags: ['Mapping', 'Deck.gl']
           },          
           {
             id: 2,
@@ -20,7 +21,9 @@ class Home extends Component {
             subtitle: 'Is the subway system as dire as we say it is?',
             date: '4/14/2019',
             preview: '/previews/mta-doom-gloom.gif',
-            link: '/articles/MTA-doom-gloom'
+            link: '/articles/MTA-doom-gloom',
+            tags: ['Transit', 'Plotly']
+
           },
           {
             id: 3,
@@ -28,7 +31,9 @@ class Home extends Component {
             subtitle: 'A surprisingly intuitive tool for data democratization.',
             date: '4/2/2019',
             preview: '/previews/shiny-is-cool.jpg',
-            link: '/articles/shiny-cool'
+            link: '/articles/shiny-cool',
+            tags: ['Web', 'Shiny']
+
     
           },
           {
@@ -37,7 +42,8 @@ class Home extends Component {
             subtitle: 'Trying my best.',
             date: '1/24/2019',
             preview: '/previews/new-blog.jpg',
-            link: '/articles/new-blog'
+            link: '/articles/new-blog',
+            tags: ['Tag 1', 'Tag 2']
           }
         ]
       }  

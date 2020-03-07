@@ -2,29 +2,55 @@
 @import 'src/styles/_screen_sizes';
 
 .ArticleItem {
-    width: auto;
+    text-decoration: none;
+    overflow: hidden;
     display: block;
     border-bottom: 1px solid $line-color;
     box-sizing: border-box;
     padding: 24px 0;
 
-    h2 {
-        font-size: 20px;
-        font-weight: 700;    
-        color: $link-color;    
+    .metadata {
+        font-size: 12px;
+        line-height: 1.4em;
+        margin-bottom: 18px;
+
+        .publishedDate {
+            margin-right: 1em;
+        }
+        
+        .tags {
+            margin-top: 1em;
+        }
     }
 
     a {
         color: $link-color;
         text-decoration: none;
-    }
 
-    p {
-        color: $link-color;
-    }
+        .thumbnail {
+            box-sizing: border-box;
+            margin-bottom: 24px;
+            position: relative;
 
-    img {
-        width: 100%;
+            img {
+                max-width: 100%;
+            }
+        }
+
+        .description {
+            .title {
+                font-weight: 700;
+                margin: 0 0 6px 0;
+                line-height: 1.2em;
+                font-style: normal;
+            }
+
+            .abstract {
+                margin: 0 0 12px 0;
+                line-height: 1.4em;
+                font-size: 16px;
+            }
+        }
     }
 }
 

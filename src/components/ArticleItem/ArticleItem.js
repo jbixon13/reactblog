@@ -6,11 +6,26 @@ export class ArticleItem extends Component {
     render() {
         return (
             <div className={styles.ArticleItem}>
+                <div className={styles.metadata}>
+                    <div className={styles.publishedDate}>
+                        { this.props.article.date }
+                    </div>
+                    <div className={styles.tags}>
+                        { this.props.article.tags }
+                    </div>
+                </div>
                 <Link to={ this.props.article.link }>
-                    <h2>{ this.props.article.title }</h2>
-                    <p>{ this.props.article.subtitle }</p>
-                    <p>{ this.props.article.date }</p>
-                    <img src={ process.env.PUBLIC_URL + this.props.article.preview } alt={'article preview'}/>
+                    <div className={styles.thumbnail}>
+                        <img src={ process.env.PUBLIC_URL + this.props.article.preview } alt={'article preview'} />
+                    </div>
+                    <div className={styles.description}>
+                        <h2 className={styles.title}>
+                            { this.props.article.title }
+                        </h2>
+                        <p className={styles.abstract}>
+                            { this.props.article.subtitle }
+                        </p>
+                    </div>
                 </Link>
             </div>
         )
