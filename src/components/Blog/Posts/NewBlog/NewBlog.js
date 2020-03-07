@@ -9,9 +9,8 @@ export class NewBlog extends Component {
             <div className={styles.NewBlog}> 
                 <ArticleContainer>
                     <ArticleHeader>
-                        <h1>New Year, New Blog</h1>
-                        <p>Subtitle here</p>
-                        <p>Date here</p>
+                        <h1>New Year, New (First) Blog</h1>
+                        <p>Trying my best.</p>
                     </ArticleHeader>   
                     <p>
                         Now that I’ve spent an unfortunate amount of time debating the best way to share my work on the internet, I guess I should write about it a little. If anything maybe it will make me feel like it was worth it.

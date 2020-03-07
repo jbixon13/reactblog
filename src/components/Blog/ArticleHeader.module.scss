@@ -1,5 +1,23 @@
+@import 'src/styles/_colors';
+
 .ArticleHeader {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    overflow-x: hidden;
+    border-bottom: 1px solid $line-color;
+
     h1 {
-        font-size: 20px;
+        grid-column: text;
+        font-size: 40px;
+        font-weight: 700;
+        line-height: 1.1em;
+        margin: 0 0 0.5rem;
+    }
+
+    p {
+        margin: 0 0 0 0;
+        font-weight: 300;
+        font-size: 1.2rem;
+        line-height: 1.55rem;
     }
 }
