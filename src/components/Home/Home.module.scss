@@ -2,17 +2,29 @@
 @import 'src/styles/_screen_sizes';
 
 .Home {
-    .ArticleList {
-        margin-left: 24px;
-        margin-right: 24px;
-        margin-top: 24px;
-        margin-bottom: 24px;
-      }
+
+  .ArticleList {
+    margin-left: 24px;
+    margin-right: 24px;
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
 }
 
 @media (min-width: $small-screen) {
   .Home {
     .ArticleList {
+      margin-top: 60px;
+    }
+}
+}
+
+@media (min-width: $large-screen) {
+  .Home {
+    .ArticleList {
+      width: 984px;
+      margin-left: auto;
+      margin-right: auto;
       margin-top: 60px;
     }
 }
