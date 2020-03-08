@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styles from './DeckTerrain.module.scss';
 import ArticleHeader from '../../ArticleHeader';
 import ArticleContainer from '../../ArticleContainer';
+import TerrainTest from './TerrainTest';
 
 export class DeckTerrain extends Component {
     render() {
@@ -14,6 +15,9 @@ export class DeckTerrain extends Component {
                         <p>Date here</p>
                     </ArticleHeader>   
                 <p>hello from inside the container</p>
+                <div classname={styles.testing}>
+                    <p>Hello from in the testing div</p>
+                </div>
                 </ArticleContainer>  
             </div>
         )
