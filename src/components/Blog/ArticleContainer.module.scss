@@ -1,4 +1,5 @@
 @import 'src/styles/_colors';
+@import 'src/styles/_screen_sizes';
 
 .ArticleContainer {
     margin-left: 24px;
@@ -19,4 +20,18 @@
         background-color: rgb(207, 223, 235);
         border-radius: 4px;
         }
+}
+
+@media (min-width: $small-screen) {
+    .ArticleContainer {
+        margin-left: 96px;
+        margin-right: 96px;
+    }
+}
+
+@media (min-width: $large-screen) {
+    .ArticleContainer {
+        margin-left: 20%;
+        margin-right: 20%;
+    }
 }
