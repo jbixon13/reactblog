@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import styles from './DeckTerrain.module.scss';
 import ArticleHeader from '../../ArticleHeader';
 import ArticleContainer from '../../ArticleContainer';
-import TerrainTest from './TerrainTest';
 
 export class DeckTerrain extends Component {
     render() {

@@ -4,6 +4,20 @@ import ArticleList from '../ArticleList/ArticleList';
 
 class Home extends Component {    
 
+  // fetch hello world from mario API and return in console
+  componentDidMount () {
+    fetch('https://mario-plumber.herokuapp.com/hello/world')
+    .then(res => {
+      return res.json();
+    })
+    .then(api => {
+      console.log(api)
+    })
+    .catch(err => {
+      console.error(err)
+    });
+  }
+
     state = {
         articles: [
           {
