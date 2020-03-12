@@ -11,7 +11,13 @@ export class ArticleItem extends Component {
                         { this.props.article.date }
                     </div>
                     <div className={styles.tags}>
-                        { this.props.article.tags }
+                        { this.props.article.tags.map((tag) => {
+                            return (
+                            <p className={styles.tag}>
+                                {tag}
+                            </p>
+                            )
+                        }) }
                     </div>
                 </div>
                 <Link to={ this.props.article.link }>
