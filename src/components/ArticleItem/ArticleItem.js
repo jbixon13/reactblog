@@ -17,7 +17,7 @@ export class ArticleItem extends Component {
                                 {tag}
                             </p>
                             )
-                        }) }
+                        })}
                     </div>
                 </div>
                 <Link to={ this.props.article.link }>
