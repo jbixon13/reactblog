@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 import styles from './ArticleItem.module.scss';
 import { Link } from 'react-router-dom';
 
+// fix articles opening at bottom of page
+const scrollToTop = () => {
+    window.scrollTo(0, 0)
+}
+
 export class ArticleItem extends Component {
     render() {
         return (
@@ -20,7 +25,7 @@ export class ArticleItem extends Component {
                         })}
                     </div>
                 </div>
-                <Link to={ this.props.article.link }>
+                <Link to={ this.props.article.link } onClick={scrollToTop}>
                     <div className={styles.thumbnail}>
                         <img src={ process.env.PUBLIC_URL + this.props.article.preview } alt={'article preview'} />
                     </div>
