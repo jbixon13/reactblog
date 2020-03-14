@@ -11,7 +11,6 @@ export class ShinyCool extends Component {
                     <ArticleHeader>
                         <h1>Shiny is Cool as Hell</h1>
                         <p>A surprisingly intuitive tool for data democratization.</p>
-                        <p>4/2/2019</p>
                     </ArticleHeader>   
                     <p>
                         I have taken the past month or so to make progress on a <a href='www.codeforbaltimore.org'>Code for Baltimore</a> project I’ve been working on since moving to Baltimore. As it stood we had created a <a href='www.syncthecity.github.io'>static website</a> with a map using <code>Leaflet</code> to identify where nonprofit organizations are in Baltimore and what they do. This necessitates not just a map or other visualization but a more robust tool that allows for users to explore the data themselves. Although our static site could do some limited filtering we quickly outgrew its capabilities. The next logical step was to develop a <a href='https://shiny.rstudio.com/'>web application.</a>

@@ -11,7 +11,6 @@ export class MTADoom extends Component {
                     <ArticleHeader>
                         <h1>MTA Doom and Gloom</h1>
                         <p>Is the NYC Subway system as dire as we say it is?</p>
-                        <p>4/14/2019</p>
                     </ArticleHeader>   
                 <p>
                     It's no secret that New Yorkers love to hate their subway system. I was inspired to more critically analyze it after reading this <a href='https://www.citylab.com/transportation/2018/04/why-new-york-city-stopped-building-subways/557567/'>CityLab</a> article that contextualizes the history of the MTA. I am specifically interested in whether it truly is degrading by using their publically maintained performance metrics. Some of these metrics have opaque names, so I'll specify where necessary. 
