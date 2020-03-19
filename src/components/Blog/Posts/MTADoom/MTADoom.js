@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styles from './MTADoom.module.scss';
 import ArticleHeader from '../../ArticleHeader';
 import ArticleContainer from '../../ArticleContainer';
+import Scrolly from '../../Scrolly';
 
 export class MTADoom extends Component {
     render() {
@@ -15,9 +16,24 @@ export class MTADoom extends Component {
                 <p>
                     It's no secret that New Yorkers love to hate their subway system. I was inspired to more critically analyze it after reading this <a href='https://www.citylab.com/transportation/2018/04/why-new-york-city-stopped-building-subways/557567/'>CityLab</a> article that contextualizes the history of the MTA. I am specifically interested in whether it truly is degrading by using their publically maintained performance metrics. Some of these metrics have opaque names, so I'll specify where necessary. 
                 </p>
-                <p>
-                    Images here
-                </p>
+                <Scrolly>
+                    <section>
+                        <figure>
+                            <iframe frameborder='0' src='http://mario-plumber.herokuapp.com/MTA_article/plot1'/>
+                        </figure>
+                        <article>
+                            <div>
+                                <p>This is a plotly chart</p>
+                            </div>
+                            <div>
+                                <p>This is some narration</p>
+                            </div>
+                            <div>
+                                <p>More narration</p>
+                            </div>
+                        </article>
+                    </section>
+                </Scrolly>
                 <p>
                     There is a lot of information that can be lost in rapid-fire chart presentation, but the overall theme is that the subways of New York City are less reliable, break down more, and yet are responsible for moving more and more people.
                 </p>
