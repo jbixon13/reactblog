@@ -19,7 +19,7 @@ export class MTADoom extends Component {
                 <Scrolly>
                     <section>
                         <figure>
-                            <iframe frameborder='0' src='http://mario-plumber.herokuapp.com/MTA_article/plot1'/>
+                            <iframe frameborder='0' src='https://mario-plumber.herokuapp.com/MTA_article/plot1'/>
                         </figure>
                         <article>
                             <div>
