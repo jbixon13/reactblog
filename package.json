@@ -12,8 +12,10 @@
     "deck.gl": "8.1.0",
     "node-sass": "^4.13.1",
     "pbf": "^3.2.1",
+    "plotly.js": "^1.52.3",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
+    "react-plotly.js": "^2.4.0",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.0"
   },
