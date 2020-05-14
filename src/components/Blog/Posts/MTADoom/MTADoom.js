@@ -9,6 +9,20 @@ const Plotly = window.Plotly;
 const Plot = createPlotlyComponent(Plotly);
 
 export class MTADoom extends Component {
+
+  // fetch plots fromm S3 bucket and return in console
+  componentDidMount () {
+    fetch('https://mario-object-storage.s3.us-east-2.amazonaws.com/MTA-article/plot1.json')
+    .then(res => {
+      return res.json();
+    })
+    .then(api => {
+      console.log(api);
+    })
+    .catch(err => {
+      console.error(err);
+    });
+  }
     render() {
         return (
             <div className={styles.MTADoom}>
@@ -23,7 +37,7 @@ export class MTADoom extends Component {
                 <Scrolly>
                     <section>
                         <figure>
-                            <iframe frameborder='0' src='https://mario-plumber.herokuapp.com/MTA_article/plot1'/>
+                            {/* <iframe frameborder='0' src='https://mario-plumber.herokuapp.com/MTA_article/plot1'/> */}
                         </figure>
                         <article>
                             <div>

@@ -4,7 +4,7 @@ import ArticleList from '../ArticleList/ArticleList';
 
 class Home extends Component {    
 
-  // hit plumber API to spin it upand return in console
+  // hit plumber API to spin it up and return in console
   componentDidMount () {
     fetch('https://mario-plumber.herokuapp.com/hello/world')
     .then(res => {

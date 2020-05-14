@@ -18,7 +18,7 @@ export class ArticleItem extends Component {
                     <div className={styles.tags}>
                         { this.props.article.tags.map((tag) => {
                             return (
-                            <p className={styles.tag}>
+                            <p key={tag} className={styles.tag}>
                                 {tag}
                             </p>
                             )
