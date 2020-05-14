@@ -45,7 +45,7 @@ class Home extends Component {
             date: '10/26/2019',
             preview: '/previews/learning-devops.png',
             link: '/articles/learning-devops',
-            tags: ['Web', 'Docker']
+            tags: ['Webdev', 'Docker']
           },              
           {
             id: 4,
@@ -82,7 +82,7 @@ class Home extends Component {
             date: '4/2/2019',
             preview: '/previews/shiny-is-cool.jpg',
             link: '/articles/shiny-cool',
-            tags: ['Web', 'Shiny']
+            tags: ['Webdev', 'Shiny']
 
     
           },

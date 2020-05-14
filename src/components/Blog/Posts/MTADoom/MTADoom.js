@@ -10,18 +10,17 @@ const Plot = createPlotlyComponent(Plotly);
 
 export class MTADoom extends Component {
 
-  // fetch plots fromm S3 bucket and return in console
-  componentDidMount () {
-    fetch('https://mario-object-storage.s3.us-east-2.amazonaws.com/MTA-article/plot1.json')
-    .then(res => {
-      return res.json();
-    })
-    .then(api => {
-      console.log(api);
-    })
-    .catch(err => {
-      console.error(err);
-    });
+  state = {
+    mta: 1
+  }
+
+  // fetch plots from S3 bucket and return in console
+  async componentDidMount () {
+    const url = 'https://mario-object-storage.s3.us-east-2.amazonaws.com/MTA-article/plot1.json';
+    const response = await fetch(url); 
+    const data = await response.json();
+    console.log(data[0]); 
+    this.setState({ mta: data[0] });
   }
     render() {
         return (
@@ -37,7 +36,16 @@ export class MTADoom extends Component {
                 <Scrolly>
                     <section>
                         <figure>
-                            {/* <iframe frameborder='0' src='https://mario-plumber.herokuapp.com/MTA_article/plot1'/> */}
+                            <Plot
+                                data={[
+                                    {
+                                        type: 'line',
+                                        x: [this.state.mta.period],
+                                        y: [this.state.mta.ytd_actual]
+                                    }
+                                ]}
+                                layout={ { height: 400, title: 'There is no clear trend of monthly ridership'} }
+                            />
                         </figure>
                         <article>
                             <div>
@@ -67,19 +75,6 @@ export class MTADoom extends Component {
                 <p>
                     In subway performance metrics, I don’t believe an axis that goes from 0-100% is truthfully expressing the question of whether the network is increasing or decreasing in performance. We do not care about a subway system that has a 0% On-Time Performance because such a system would not exist. We care more about comparing historic to current performance, and leaving a chart full of white space implies stability and lack of change in performance where that is not the case. It would be equally misleading if I were to reduce the axes to a percent or two to imply volatility where there is none, but there is a clear and consistent trend of worsening performance that is not insignificant across multiple metrics. For these reasons, the MTA should reconsider their philosophy for how they communicate data to the public.
                 </p>
-                <Plot
-                    data={[
-                        {
-                            x: [1, 2, 3],
-                            y: [2, 6, 3],
-                            type: 'scatter',
-                            mode: 'lines+markers',
-                            marker: {color: 'red'},
-                        },
-                        {type: 'bar', x: [1, 2, 3], y: [2, 5, 3]},
-                    ]}
-                    layout={ {width: 320, height: 240, title: 'A Fancy Plot'} }
-                />
                 </ArticleContainer>            
             </div>
         )
