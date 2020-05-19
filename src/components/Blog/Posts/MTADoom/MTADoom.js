@@ -11,7 +11,8 @@ const Plot = createPlotlyComponent(Plotly);
 export class MTADoom extends Component {
 
   state = {
-    mta: 1
+    loading: true,  
+    ridership: []
   }
 
   // fetch plots from S3 bucket and return in console
@@ -19,17 +20,22 @@ export class MTADoom extends Component {
     const url = 'https://mario-object-storage.s3.us-east-2.amazonaws.com/MTA-article/plot1.json';
     const response = await fetch(url); 
     const data = await response.json();
-    console.log(data[0]); 
-    this.setState({ mta: data[0] });
+    this.setState({ ridership: data, loading: false });
   }
     render() {
+        var x = [];
+        var y = [];
+        this.state.ridership.forEach((item) => {
+            x.push(item.period);
+            y.push(item.ytd_actual);
+        });
         return (
             <div className={styles.MTADoom}>
                 <ArticleContainer>
                     <ArticleHeader>
                         <h1>MTA Doom and Gloom</h1>
                         <p>Is the NYC Subway system as dire as we say it is?</p>
-                    </ArticleHeader>   
+                    </ArticleHeader>       
                 <p>
                     It's no secret that New Yorkers love to hate their subway system. I was inspired to more critically analyze it after reading this <a href='https://www.citylab.com/transportation/2018/04/why-new-york-city-stopped-building-subways/557567/'>CityLab</a> article that contextualizes the history of the MTA. I am specifically interested in whether it truly is degrading by using their publically maintained performance metrics. Some of these metrics have opaque names, so I'll specify where necessary. 
                 </p>
@@ -39,11 +45,11 @@ export class MTADoom extends Component {
                             <Plot
                                 data={[
                                     {
-                                        type: 'line',
-                                        x: [this.state.mta.period],
-                                        y: [this.state.mta.ytd_actual]
+                                        type: 'scatter',
+                                        x: x,
+                                        y: y
                                     }
-                                ]}
+                                ]} 
                                 layout={ { height: 400, title: 'There is no clear trend of monthly ridership'} }
                             />
                         </figure>
