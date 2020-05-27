@@ -52,7 +52,7 @@ class Home extends Component {
             title: 'Mapping Cyclist Safety in New York City',
             subtitle: 'Is there a relationship between bike path access and cyclist injuries?',
             date: '9/11/2019',
-            preview: '/previews/cyclist-safety.gif',
+            preview: '/previews/cyclist-safety.svg',
             link: '/articles/cyclist-safety',
             tags: ['Transit', 'sf']
           },                       

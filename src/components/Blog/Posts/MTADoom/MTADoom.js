@@ -27,7 +27,7 @@ export class MTADoom extends Component {
         var y = [];
         this.state.ridership.forEach((item) => {
             x.push(item.period);
-            y.push(item.ytd_actual);
+            y.push(item.monthly_actual);
         });
         return (
             <div className={styles.MTADoom}>
@@ -46,6 +46,7 @@ export class MTADoom extends Component {
                                 data={[
                                     {
                                         type: 'scatter',
+                                        mode: 'markers',
                                         x: x,
                                         y: y
                                     }
@@ -66,6 +67,24 @@ export class MTADoom extends Component {
                         </article>
                     </section>
                 </Scrolly>
+                <Scrolly>
+                    <section>
+                        <figure>
+                            <iframe frameborder='0' src='https://mario-object-storage.s3.us-east-2.amazonaws.com/MTA-article/plotly_full.html'/>
+                        </figure>
+                        <article>
+                            <div>
+                                <p>This is a plotly chart</p>
+                            </div>
+                            <div>
+                                <p>This is some narration</p>
+                            </div>
+                            <div>
+                                <p>More narration</p>
+                            </div>
+                        </article>
+                    </section>
+                </Scrolly>          
                 <p>
                     There is a lot of information that can be lost in rapid-fire chart presentation, but the overall theme is that the subways of New York City are less reliable, break down more, and yet are responsible for moving more and more people.
                 </p>
