@@ -21,6 +21,12 @@
         background-color: rgb(207, 223, 235);
         border-radius: 4px;
         }
+    
+    img {
+        width: 80%;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
 }
 
 @media (min-width: $small-screen) {

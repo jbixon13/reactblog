@@ -3,10 +3,6 @@ import styles from './MTADoom.module.scss';
 import ArticleHeader from '../../ArticleHeader';
 import ArticleContainer from '../../ArticleContainer';
 import Scrolly from '../../Scrolly';
-// workaround for plotly causing JS heap out of memory errors
-import createPlotlyComponent from 'react-plotly.js/factory';
-const Plotly = window.Plotly;
-const Plot = createPlotlyComponent(Plotly);
 
 export class MTADoom extends Component {
 
@@ -42,27 +38,22 @@ export class MTADoom extends Component {
                 <Scrolly>
                     <section>
                         <figure>
-                            <Plot
-                                data={[
-                                    {
-                                        type: 'scatter',
-                                        mode: 'markers',
-                                        x: x,
-                                        y: y
-                                    }
-                                ]} 
-                                layout={ { height: 400, title: 'There is no clear trend of monthly ridership'} }
-                            />
+                            <iframe title='MTA ridership plot' frameBorder='0' src='../plot_assets/MTA_article/plotly_ridership.html'/>
+                        </figure>
+                        <article>
+                        </article>
+                    </section>
+                </Scrolly>
+                <Scrolly>
+                    <section>
+                        <figure>
+                            <iframe title='MTA ridership plot' frameBorder='0' src='../plot_assets/MTA_article/plotly_otp.html'/>
                         </figure>
                         <article>
                             <div>
-                                <p>This is a plotly chart</p>
-                            </div>
-                            <div>
-                                <p>This is some narration</p>
-                            </div>
-                            <div>
-                                <p>More narration</p>
+                                <p>
+                                    “Terminal On-Time Performance measures the percentage of trains arriving at their destination terminals as scheduled. A train is counted as on-time if it arrives at its destination early, on time, or no more than five minutes late, and has not skipped any planned stops. TOTP is a legacy metric that provides a measure of trains arriving within the standard, and not a direct measure of customer travel time, particularly since relatively few customers travel all the way to the end of a line.” — MTA
+                                </p>
                             </div>
                         </article>
                     </section>
@@ -70,30 +61,39 @@ export class MTADoom extends Component {
                 <Scrolly>
                     <section>
                         <figure>
-                            <iframe frameborder='0' src='https://mario-object-storage.s3.us-east-2.amazonaws.com/MTA-article/plotly_full.html'/>
+                            <iframe title='MTA wait assessment plot' frameBorder='0' src='../plot_assets/MTA_article/plotly_wait.html'/>
                         </figure>
                         <article>
                             <div>
-                                <p>This is a plotly chart</p>
-                            </div>
-                            <div>
-                                <p>This is some narration</p>
-                            </div>
-                            <div>
-                                <p>More narration</p>
+                                <p>
+                                    “Wait Assessment measures how regularly the trains are spaced during peak hours. To meet the standard, the headway (time between trains) can be no greater than 25% more than the scheduled headway. This provides a percentage of trains passing the standard, but does not account for extra service operated, is not weighted to how many customers are waiting for the trains at different stations, does not distinguish between relatively minor gaps in service and major delays, and is not a true measurement of time customers spend waiting on the platform.” — MTA
+                                </p>
                             </div>
                         </article>
                     </section>
-                </Scrolly>          
+                </Scrolly>
+                <Scrolly>
+                    <section>
+                        <figure>
+                            <iframe title='MTA mean distance between failures plot' frameBorder='0' src='../plot_assets/MTA_article/plotly_fail.html'/>
+                        </figure>
+                        <article>
+                            <div>
+                                <p>
+                                    “Mean Distance Between Failures (MDBF) reports how frequently car-related problems such as door failures, loss of motor power, or brake issues cause a delay of over five minutes. It is calculated by dividing the number of miles train cars run in service by the number of incidents due to car‐related problems.” — MTA
+                                </p>
+                            </div>
+                        </article>
+                    </section>
+                </Scrolly>
                 <p>
                     There is a lot of information that can be lost in rapid-fire chart presentation, but the overall theme is that the subways of New York City are less reliable, break down more, and yet are responsible for moving more and more people.
                 </p>
                 <p>
                     An interesting note is that when looking at the MTA’s <a href='http://dashboard.mta.info/'>performance dashboard</a>, their charts use the same underlying data to tell a very different story.
                 </p>
-                <p>
-                    Images here
-                </p>
+                <img src='../image_assets/MTA_article/dash_otp.jpg' alt='otp chart from the MTA dashboard' />
+                <img src='../image_assets/MTA_article/dash_wait.jpg' alt='mean wait time chart from the MTA dashboard' />
                 <p>
                     This is a perfect opportunity to weigh in on the perennial debate around truncated y axes with a concrete example. As is the case in most methodology questions, there are very few decisions that have a clear cut answer without room for nuance. When considering truncated y axes, one should express the question they are answering about their data in the decision.
                 </p>
