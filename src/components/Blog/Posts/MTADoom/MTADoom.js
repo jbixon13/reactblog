@@ -5,26 +5,7 @@ import ArticleContainer from '../../ArticleContainer';
 import Scrolly from '../../Scrolly';
 
 export class MTADoom extends Component {
-
-  state = {
-    loading: true,  
-    ridership: []
-  }
-
-  // fetch plots from S3 bucket and return in console
-  async componentDidMount () {
-    const url = 'https://mario-object-storage.s3.us-east-2.amazonaws.com/MTA-article/plot1.json';
-    const response = await fetch(url); 
-    const data = await response.json();
-    this.setState({ ridership: data, loading: false });
-  }
     render() {
-        var x = [];
-        var y = [];
-        this.state.ridership.forEach((item) => {
-            x.push(item.period);
-            y.push(item.monthly_actual);
-        });
         return (
             <div className={styles.MTADoom}>
                 <ArticleContainer>
