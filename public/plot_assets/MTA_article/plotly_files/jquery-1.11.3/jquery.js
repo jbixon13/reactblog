@@ -6368,7 +6368,7 @@ function addGetHookIf( conditionFn, hookFn ) {
 			// Support: Firefox<29, Android 2.3
 			// Vendor-prefix box-sizing
 			"-webkit-box-sizing:border-box;-moz-box-sizing:border-box;" +
-			"box-sizing:border-box;display:block;margin-top:1%;top:1%;" +
+			"box-sizing:border-box;display:block;margin-top:;top:;" +
 			"border:1px;padding:1px;width:4px;position:absolute";
 
 		// Support: IE<9
@@ -6378,7 +6378,7 @@ function addGetHookIf( conditionFn, hookFn ) {
 
 		// Check for getComputedStyle so that this code is not run in IE<9.
 		if ( window.getComputedStyle ) {
-			pixelPositionVal = ( window.getComputedStyle( div, null ) || {} ).top !== "1%";
+			pixelPositionVal = ( window.getComputedStyle( div, null ) || {} ).top !== "";
 			boxSizingReliableVal =
 				( window.getComputedStyle( div, null ) || { width: "4px" } ).width === "4px";
 
