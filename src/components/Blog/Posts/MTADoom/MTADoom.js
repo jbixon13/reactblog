@@ -4,6 +4,7 @@ import ArticleHeader from '../../ArticleHeader';
 import ArticleContainer from '../../ArticleContainer';
 import Scrolly from '../../Scrolly';
 import Chart from '../../Chart';
+import { ParentSize } from '@vx/responsive';
 
 export class MTADoom extends Component {
     render() {
@@ -82,7 +83,9 @@ export class MTADoom extends Component {
                 <p>
                     In subway performance metrics, I don’t believe an axis that goes from 0-100% is truthfully expressing the question of whether the network is increasing or decreasing in performance. We do not care about a subway system that has a 0% On-Time Performance because such a system would not exist. We care more about comparing historic to current performance, and leaving a chart full of white space implies stability and lack of change in performance where that is not the case. It would be equally misleading if I were to reduce the axes to a percent or two to imply volatility where there is none, but there is a clear and consistent trend of worsening performance that is not insignificant across multiple metrics. For these reasons, the MTA should reconsider their philosophy for how they communicate data to the public.
                 </p>
-                <Chart/>
+                <ParentSize>
+                    {({ width, height }) => <Chart width={width} height={400} />}
+                </ParentSize>
                 </ArticleContainer>            
             </div>
         )
