@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './Chart.module.scss';
 import { appleStock } from '@vx/mock-data';
 import { Group } from '@vx/group';
 import { scaleTime, scaleLinear } from '@vx/scale';
@@ -35,7 +36,7 @@ const Chart = ({width, height}) => {
     });
 
     return (
-        <div>
+        <div className={styles.Chart}>
             <svg width={width} height={height}>
                 <LinearGradient
                 from='#fbc2eb'
