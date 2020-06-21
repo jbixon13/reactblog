@@ -4,6 +4,7 @@ import {BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
 import Home from './components/Home/Home';
 import About from './components/About/About';
+import Contact from './components/Contact/Contact';
 import Footer from './components/Footer/Footer';
 import WebdevYear from './components/Blog/Posts/WebdevYear/WebdevYear';
 import DeckTerrain from './components/Blog/Posts/DeckTerrain/DeckTerrain';
@@ -25,6 +26,7 @@ class App extends Component {
           <Switch>
             <Route path='/' exact component={Home}/>
             <Route path='/about' component={About}/>
+            <Route path='/contact' component={Contact}/>
             <Route path='/articles/webdev-year' component={WebdevYear}/>
             <Route path='/articles/deck-terrain' component={DeckTerrain}/>
             <Route path='/articles/learning-devops' component={Devops}/>

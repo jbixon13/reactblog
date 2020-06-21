@@ -1,0 +1,22 @@
+@import 'src/styles/_colors';
+
+.Contact {
+
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        text-align: center;
+        margin-top: 45vh;
+        margin-bottom: 45vh;
+        list-style: none;
+    }
+
+    li {
+        flex: 1 0 21%
+    }
+
+    img {
+        width: 30px;
+    }
+
+}
