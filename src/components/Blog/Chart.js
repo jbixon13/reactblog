@@ -7,9 +7,30 @@ import { AreaClosed } from '@vx/shape';
 import { AxisLeft, AxisBottom } from '@vx/axis';
 import { LinearGradient } from '@vx/gradient';
 import { extent, max } from 'd3-array';
+import { useTooltip, TooltipWithBounds } from '@vx/tooltip';
+import { localPoint } from '@vx/event';
 
 const Chart = ({width, height}) => {
+
     const data = appleStock;
+
+    const {
+      tooltipData,
+      tooltipLeft,
+      tooltipTop,
+      tooltipOpen,
+      showTooltip,
+      hideTooltip,
+    } = useTooltip();
+
+    const handleMouseOver = (event, datum) => {
+      const coords = localPoint(event.target.ownerSVGElement, event);
+      showTooltip({
+        tooltipLeft: coords.x,
+        tooltipTop: coords.y,
+        tooltipData:datum
+      });
+    }
     
     const x = d => new Date(d.date);
     const y = d => d.close;
@@ -53,6 +74,8 @@ const Chart = ({width, height}) => {
                     y={d => yScale(y(d))}
                     fill={"url(#gradient)"}
                     stroke={""}
+                    onMouseOver={handleMouseOver}
+                    onMouseOut={hideTooltip}
                     />
 
                     <AxisLeft
@@ -74,6 +97,16 @@ const Chart = ({width, height}) => {
 
                 </Group>
             </svg>
+
+            {tooltipOpen && (
+              <TooltipWithBounds
+              key={Math.random()}
+              top={tooltipTop}
+              left={tooltipLeft}
+              >
+                Data value <strong>{tooltipData}</strong>
+              </TooltipWithBounds>
+            )}
         </div>
     )
 

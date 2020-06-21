@@ -94,6 +94,15 @@ class Home extends Component {
             preview: '/previews/new-blog.jpg',
             link: '/articles/new-blog',
             tags: ['Career']
+          },
+          {
+            id: 9,
+            title: 'Stateless Functional Component',
+            subtitle: 'Time to refactor',
+            date: '6/17/2020',
+            preview: '/previews/new-blog.jpg',
+            link: '/articles/functional-test',
+            tags: ['Testing']
           }
         ]
       }  

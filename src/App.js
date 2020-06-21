@@ -13,6 +13,7 @@ import YearOne from './components/Blog/Posts/YearOne/YearOne';
 import MTADoom from './components/Blog/Posts/MTADoom/MTADoom';
 import ShinyCool from './components/Blog/Posts/ShinyCool/ShinyCool';
 import NewBlog from './components/Blog/Posts/NewBlog/NewBlog';
+import FunctionalTest from './components/Blog/Posts/FunctionalTest/FunctionalTest';
 
 class App extends Component {
 
@@ -32,6 +33,7 @@ class App extends Component {
             <Route path='/articles/MTA-doom-gloom' component={MTADoom}/>
             <Route path='/articles/shiny-cool' component={ShinyCool}/>
             <Route path='/articles/new-blog' component={NewBlog}/>
+            <Route path='/articles/functional-test' component={FunctionalTest}/>
           </Switch>          
           <Footer/>       
         </div>

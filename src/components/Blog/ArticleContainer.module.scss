@@ -29,6 +29,12 @@
     .Chart {
         width: 200%;
     }
+
+    svg {
+        overflow: visible;
+        display: block;
+        width: 100%;
+    }
 }
 
 @media (min-width: $small-screen) {
