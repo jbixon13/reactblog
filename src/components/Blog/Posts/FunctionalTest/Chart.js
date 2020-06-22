@@ -26,7 +26,7 @@ const Chart = ({ data }) => {
 
     useEffect(() => {
         const svg = select(svgRef.current);
-        console.log(dimensions);
+        // console.log(dimensions);
 
         if (!dimensions) return;
 
