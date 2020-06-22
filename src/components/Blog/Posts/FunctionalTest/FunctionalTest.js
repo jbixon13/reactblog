@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ArticleHeader from '../../ArticleHeader';
 import ArticleContainer from '../../ArticleContainer';
 import Chart from './Chart';
@@ -7,11 +7,32 @@ import { Scrollama, Step } from 'react-scrollama'
 const FunctionalTest = () => {
     const [vizData, setVizData] = useState([25, 30, 45, 60, 10, 65, 75]);
     const [currentStepIndex, setCurrentStepIndex] = useState(null);
+    
+    useEffect(() => {
+        const scrollFunction = () => {
+            if (currentStepIndex === 0) {
+                console.log('function 1 firing');
+            } 
+    
+            if (currentStepIndex === 1) {
+                console.log('function 2 firing');
+            } 
+    
+            if (currentStepIndex === 2) {
+                console.log('function 3 firing');
+            } 
+    
+            if (currentStepIndex === 3) {
+                console.log('function 4 firing');
+            }
+        }
+        scrollFunction();
+    }, [currentStepIndex]);
 
     const onStepEnter = ({ data }) => {
         setCurrentStepIndex(data);
-
-        // setData(data.map(value => value + 5));
+        // setScrollFunction(data);
+        // console.log(scrollFunction[data]);
     };
 
     // prototype how to read in data from S3 using hooks
