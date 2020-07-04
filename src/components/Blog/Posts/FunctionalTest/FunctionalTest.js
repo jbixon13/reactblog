@@ -1,13 +1,39 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import ArticleHeader from '../../ArticleHeader';
 import ArticleContainer from '../../ArticleContainer';
 import Chart from './Chart';
 import { Scrollama, Step } from 'react-scrollama'
 
 const FunctionalTest = () => {
-    const [vizData, setVizData] = useState([25, 30, 45, 60, 10, 65, 75]);
+    const [data, setData] = useState([25, 30, 45, 60, 10, 65, 75]);
     const [currentStepIndex, setCurrentStepIndex] = useState(null);
-    
+    const [ridership, setRidership] = useState(null);
+    const [otp, setOtp] = useState(null);
+
+    const fetchData = () => {
+        const ridershipAPI = 'https://mario-object-storage.s3.us-east-2.amazonaws.com/MTA-article/plot1.json';
+        const otpAPI = 'https://mario-object-storage.s3.us-east-2.amazonaws.com/MTA-article/plot2.json';
+
+        const getRidership = axios.get(ridershipAPI);
+        const getOtp = axios.get(otpAPI);
+        axios.all([getRidership, getOtp]).then(
+            axios.spread((...allData) => {
+                const allDataRidership = allData[0].data
+                const allDataOtp = allData[1].data
+
+                setRidership(allDataRidership);
+                setOtp(allDataOtp);
+            })
+        );
+    };
+
+    useEffect(() => {
+        fetchData();
+    }, []);
+
+    console.log(ridership, otp);
+
     useEffect(() => {
         const scrollFunction = () => {
             if (currentStepIndex === 0) {
@@ -27,25 +53,11 @@ const FunctionalTest = () => {
             }
         }
         scrollFunction();
-    }, [currentStepIndex]);
+    }, [currentStepIndex, data]);
 
     const onStepEnter = ({ data }) => {
         setCurrentStepIndex(data);
-        // setScrollFunction(data);
-        // console.log(scrollFunction[data]);
-    };
-
-    // prototype how to read in data from S3 using hooks
-    // const [ridership, setRidership] = useState([]);
-
-    // useEffect(() => {
-    //     fetch('s3 api')
-    //       .then(response => response.json())
-    //       .then(items => {
-    //           setRidership();
-    //       })
-    //       .catch(console.error);
-    // }, []);      
+    };  
 
     return(
         <div>
@@ -54,18 +66,18 @@ const FunctionalTest = () => {
                     <h1>Stateless Functional Component</h1>
                     <p>Prototyping future D3 work.</p>
                 </ArticleHeader>
-                <Chart data={vizData} />
-                <button onClick={() => setVizData(vizData.map(value => value + 5))}>
+                <Chart data={data} />
+                <button onClick={() => setData(data.map(value => value + 5))}>
                     Update data
                 </button>
-                <button onClick={() => setVizData([...vizData, Math.round(Math.random() * 100)])}
+                <button onClick={() => setData([...data, Math.round(Math.random() * 100)])}
                 >
                     Add data
                 </button>
                 <h1>Let's try out scrollytelling below:</h1>
                 <div style={{ margin: '50vh 0', border: '2px dashed skyblue' }}>
                     <div style={{ position: 'sticky', top: 200, border: '1px solid orchid' }}>
-                        <Chart data={vizData} />
+                        <Chart data={data} />
                     </div>
                     <Scrollama onStepEnter={onStepEnter} debug>
                         {[1, 2, 3, 4].map((_, stepIndex) => (
