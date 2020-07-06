@@ -32,16 +32,16 @@ const FunctionalTest = () => {
         fetchData();
     }, []);
 
-    console.log(ridership, otp);
-
     useEffect(() => {
         const scrollFunction = () => {
             if (currentStepIndex === 0) {
                 console.log('function 1 firing');
+                setData([55, 40, 20, 44, 30, 65, 75]);
             } 
     
             if (currentStepIndex === 1) {
                 console.log('function 2 firing');
+                setData([40, 2, 10, 80, 10, 65, 75]);
             } 
     
             if (currentStepIndex === 2) {
@@ -53,7 +53,7 @@ const FunctionalTest = () => {
             }
         }
         scrollFunction();
-    }, [currentStepIndex, data]);
+    }, [currentStepIndex]);
 
     const onStepEnter = ({ data }) => {
         setCurrentStepIndex(data);
