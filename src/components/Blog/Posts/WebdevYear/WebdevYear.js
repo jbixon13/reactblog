@@ -10,11 +10,34 @@ export class WebdevYear extends Component {
                 <ArticleContainer>
                     <ArticleHeader>
                         <h1>A Year of Web Development</h1>
-                        <p>Accepting my fate and building robust software.</p>
+                        <p>I have rebuilt this blog way too many times.</p>
                     </ArticleHeader>   
-                <p>
-                    I have said in the past that sometimes I need to learn things outside of my direct area of interest in order to get better at what does interest me. At the time it was learning web development basics (<code>HTML</code>, <code>CSS</code>) in order to share my analyses with the world and make them more attractive. I have reached another round of this process, and may have even accepted my fate less begrudgingly than previously.
-                </p>
+                    <h3>
+                        TLDR
+                    </h3>
+                    <ul>
+                        <li>
+                            The form your storytelling with data will take depends on the tools you are competent with and the tradeoffs you are willing to make between low and high level visualization abstractions.
+                        </li>
+                        <li>
+                            The form I’ve tried to emulate is similar to data journalism like The Pudding or NYT Interactives.
+                        </li>
+                        <li>
+                            The R community has done incredible work to bring interactive visualizations to analysts & statisticians that otherwise would have no ability to visualize with the modern web.
+                        </li>
+                        <li>
+                            Who knows where that leads us?
+                        </li>
+                    </ul>
+                    <h3>
+                        Getting everything I could out of R
+                    </h3>
+                    <h3>
+                        The long journey from R to React
+                    </h3>
+                    <h3>
+                        Where does that leave us?
+                    </h3>
                 </ArticleContainer>            
             </div>
         )

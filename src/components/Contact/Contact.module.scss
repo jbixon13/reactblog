@@ -23,8 +23,10 @@
 }
 
 @media (min-width: $small-screen) {
-    ul {
-        margin-top: 40vh;
-        margin-bottom: 40vh;
+    .Contact {
+        ul {
+            margin-top: 40vh;
+            margin-bottom: 40vh;
+        }
     }
 }
